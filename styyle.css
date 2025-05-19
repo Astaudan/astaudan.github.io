@@ -1,14 +1,42 @@
 body {
-  background-color: black;
   margin: 0;
+  padding: 0;
+  background-color: #000;
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+}
+
+.centered {
+  text-align: center;
 }
 
 h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 6rem;
+  letter-spacing: 0.2rem;
+  margin-bottom: 2rem;
   color: white;
-  font-family: sans-serif;
-  font-size: 5rem;
+}
+
+.nav-buttons a {
+  display: inline-block;
+  margin: 0.5rem 1rem;
+  padding: 0.6rem 1.4rem;
+  color: white;
+  text-decoration: none;
+  border: 1px solid white;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  letter-spacing: 0.05rem;
+}
+
+.nav-buttons a:hover {
+  background-color: white;
+  color: black;
+  cursor: pointer;
 }
