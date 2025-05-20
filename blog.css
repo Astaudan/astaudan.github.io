@@ -7,6 +7,50 @@ body {
   line-height: 1.6;
 }
 
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0d1724;
+  padding: 0.75rem 1.5rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.nav-icon {
+  width: 28px;
+  height: 28px;
+  margin-right: 0.5rem;
+}
+
+.nav-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  color: #DADADA;
+  font-weight: 700;
+  letter-spacing: 0.05rem;
+}
+
+.nav-link {
+  color: #90BE6D;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+  color: #A5DB84;
+}
+
 .blog-container {
   max-width: 1000px;
   margin: 2rem auto;
