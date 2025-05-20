@@ -39,13 +39,21 @@ h1 {
 
 .explore-wrapper {
   position: relative;
+  height: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 60px;
-  width: auto;
 }
 
+/* WRAPS BOTH BUTTON + NAV */
+.hover-trigger {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* EXPLORE BUTTON */
 .explore-button {
   background-color: #1A3B2A;
   font-family: 'Roboto', sans-serif;
@@ -61,6 +69,7 @@ h1 {
   box-shadow: 0 0 0px #1A3B2A;
   transition: opacity 0.2s ease-out;
   z-index: 2;
+  position: relative;
 }
 
 @keyframes pulse {
@@ -74,24 +83,24 @@ h1 {
   }
 }
 
-/* Only disappear explore + show nav on actual hover of explore button */
-.explore-button:hover {
+/* ON HOVER OF SHARED CONTAINER */
+.hover-trigger:hover .explore-button {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
 }
 
-.explore-button:hover + .nav-buttons {
+.hover-trigger:hover .nav-buttons {
   opacity: 1;
   pointer-events: auto;
 }
 
-.explore-button:hover + .nav-buttons a {
+.hover-trigger:hover .nav-buttons a {
   opacity: 1;
   transform: scale(1);
 }
 
-/* Nav container */
+/* NAV BUTTONS */
 .nav-buttons {
   position: absolute;
   display: flex;
@@ -104,7 +113,6 @@ h1 {
   z-index: 1;
 }
 
-/* Individual nav buttons */
 .nav-buttons a {
   background-color: #1A3B2A;
   font-family: 'Roboto', sans-serif;
@@ -122,14 +130,13 @@ h1 {
   transform: scale(0.95);
 }
 
-/* Hover styling */
 .nav-buttons a:hover {
   background-color: #fff;
   color: #1A3B2A;
   box-shadow: 0 0 8px #1A3B2A;
 }
 
-/* Mobile layout */
+/* MOBILE */
 @media (max-width: 600px) {
   h1 {
     font-size: 3rem;
@@ -148,7 +155,7 @@ h1 {
     gap: 0.6rem;
   }
 
-  .explore-button:hover + .nav-buttons a {
+  .hover-trigger:hover .nav-buttons a {
     transform: scale(1);
     opacity: 1;
   }
