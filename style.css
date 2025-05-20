@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  background: linear-gradient(160deg, #101826 0%, #1a232c 100%);
+  background: linear-gradient(160deg, #0a121c 0%, #141c26 100%);
   font-family: 'Roboto', sans-serif;
   color: #fff;
   height: 100vh;
@@ -30,11 +30,23 @@ body {
 h1 {
   font-family: 'Playfair Display', serif;
   font-weight: 700;
-  font-size: 5rem; /* increased */
+  font-size: 5rem;
   letter-spacing: 0.3rem;
   margin-bottom: 2rem;
   color: white;
   word-break: break-word;
+  animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.93;
+    transform: scale(1.0125);
+  }
 }
 
 .glow {
@@ -49,14 +61,12 @@ h1 {
   z-index: 0;
 }
 
-/* Explore wrapper keeps height steady */
 .explore-wrapper {
   position: relative;
   height: 60px;
   display: inline-block;
 }
 
-/* Explore button */
 .explore-button {
   background-color: #1A3B2A;
   font-family: 'Roboto', sans-serif;
@@ -81,7 +91,6 @@ h1 {
   pointer-events: none;
 }
 
-/* Nav appears in place of explore */
 .nav-buttons {
   position: absolute;
   top: 0;
@@ -121,7 +130,6 @@ h1 {
   box-shadow: 0 0 8px #1A3B2A;
 }
 
-/* Mobile tweaks */
 @media (max-width: 600px) {
   h1 {
     font-size: 3rem;
