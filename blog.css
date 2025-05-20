@@ -1,0 +1,93 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(160deg, #0d1724, #171f27);
+  font-family: 'Roboto', sans-serif;
+  color: #F2F2F2;
+  line-height: 1.6;
+}
+
+.blog-container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.blog-container h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  font-weight: 500;
+  color: #DADADA;
+}
+
+.blog-container p {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #BBBBBB;
+  margin-bottom: 2rem;
+}
+
+.embed-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+  margin-bottom: 3rem;
+}
+
+.embed-grid iframe {
+  width: 100%;
+  max-width: 504px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.non-embed-links {
+  background-color: #1a2a2d;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.non-embed-links h2 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: #DADADA;
+  text-align: center;
+}
+
+.non-embed-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.non-embed-links li {
+  margin-bottom: 0.8rem;
+  text-align: center;
+}
+
+.non-embed-links a {
+  color: #90BE6D;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.non-embed-links a:hover {
+  text-decoration: underline;
+  color: #A5DB84;
+}
+
+@media (max-width: 600px) {
+  .blog-container h1 {
+    font-size: 2rem;
+  }
+  .blog-container p {
+    font-size: 1rem;
+  }
+  .embed-grid {
+    gap: 1.5rem;
+  }
+  .non-embed-links {
+    padding: 1rem;
+  }
+}
