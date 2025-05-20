@@ -1,20 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="theme-color" content="#0d1724" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Astaudan // About</title>
-
-  <!-- Favicon -->
+  <link rel="stylesheet" href="about.css">
   <link rel="icon" type="image/png" href="favicon.png" />
-  <link rel="shortcut icon" href="favicon.png" type="image/png" />
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:wght@700&family=Roboto&display=swap" rel="stylesheet" />
-
-  <!-- The important part -->
-  <link rel="stylesheet" href="about.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
   <header class="intro-section">
@@ -25,15 +17,21 @@
   <main>
     <section class="timeline">
       <div class="road-container">
+        <!-- Visual road line -->
+        <div class="road-line"></div>
         <!-- Headshot Character -->
         <div class="avatar" id="avatar"></div>
+
         <!-- Timeline markers -->
-        <div class="marker" data-date="Aug 2018" data-label="Bachelor of Laws - KU Leuven"></div>
-        <div class="marker" data-date="Sep 2021" data-label="Master of Laws - KU Leuven"></div>
-        <div class="marker" data-date="Aug 2023" data-label="Master of Laws, Law & Tech - Tilburg"></div>
-        <div class="marker" data-date="Oct 2022" data-label="ClauseBase Client Engagement"></div>
-        <div class="marker" data-date="Apr 2023" data-label="Legal Lead @ Ghent Slush'D"></div>
-        <div class="marker" data-date="Sep 2024" data-label="Associate @ Cresco"></div>
+        <div class="marker top" style="left: 5%;" data-date="Aug 2018" data-label="Bachelor of Laws - KU Leuven"></div>
+        <div class="marker bottom" style="left: 15%;" data-date="Aug 2021" data-label="DLPA Advocaten Internship"></div>
+        <div class="marker top" style="left: 25%;" data-date="Sep 2021" data-label="Master KU Leuven"></div>
+        <div class="marker bottom" style="left: 35%;" data-date="Aug 2022" data-label="ClauseBase Start"></div>
+        <div class="marker top" style="left: 45%;" data-date="Aug 2023" data-label="Master Tilburg"></div>
+        <div class="marker bottom" style="left: 55%;" data-date="Nov 2023" data-label="ehvLINC Traineeship"></div>
+        <div class="marker top" style="left: 65%;" data-date="Apr 2023" data-label="Legal Lead @ Ghent Slush'D"></div>
+        <div class="marker bottom" style="left: 75%;" data-date="Aug 2024" data-label="NEXT Leuven Supervisory Board"></div>
+        <div class="marker top" style="left: 90%;" data-date="Sep 2024" data-label="Cresco Associate"></div>
       </div>
 
       <div id="details-popup" class="hidden">
@@ -50,11 +48,14 @@
 
     const data = {
       "Aug 2018": "Started Bachelor of Laws at KU Leuven. Involved with Wetswinkel and tutoring economic law.",
-      "Sep 2021": "Master of Laws in Private & Economic Law at KU Leuven. Legal roles at NEXT and LCM.",
-      "Aug 2023": "LLM in Law & Technology at Tilburg University. Alumni Team @NEXT, IT Manager @LCM.",
-      "Oct 2022": "ClauseBase – Client Engagement Associate. Led client-focused tech adoption.",
-      "Apr 2023": "Joined Ghent Slush'D as Legal Lead. Focus on legal structure and startup support.",
-      "Sep 2024": "Began role as Associate @ Cresco. Advising on tech, IP and commercial matters."
+      "Aug 2021": "Internship at DLPA Advocaten. First hands-on legal experience.",
+      "Sep 2021": "Started Master's in Private & Economic Law at KU Leuven.",
+      "Aug 2022": "Joined ClauseBase as Client Engagement Associate.",
+      "Aug 2023": "LLM in Law & Technology at Tilburg University.",
+      "Nov 2023": "Traineeship at ehvLINC. Legal research and collaboration.",
+      "Apr 2023": "Became Legal Lead at Ghent Slush'D.",
+      "Aug 2024": "Joined Supervisory Board of NEXT Leuven.",
+      "Sep 2024": "Started Associate role at Cresco."
     };
 
     markers.forEach(marker => {
@@ -69,7 +70,7 @@
       popup.classList.add('hidden');
     }
 
-    // Avatar follows mouse on road
+    // Avatar follows mouse
     const avatar = document.getElementById('avatar');
     document.querySelector('.road-container').addEventListener('mousemove', e => {
       const bounds = e.currentTarget.getBoundingClientRect();
@@ -79,4 +80,3 @@
   </script>
 </body>
 </html>
-
