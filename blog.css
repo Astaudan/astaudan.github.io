@@ -20,23 +20,19 @@ body {
 }
 
 .nav-logo {
-  display: flex;
-  align-items: center;
+  display: inline-block;
   text-decoration: none;
 }
 
 .nav-icon {
-  width: 28px;
-  height: 28px;
-  margin-right: 0.5rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  transition: opacity 0.3s;
 }
 
-.nav-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.2rem;
-  color: #DADADA;
-  font-weight: 600;
-  letter-spacing: 0.03rem;
+.nav-icon:hover {
+  opacity: 0.85;
 }
 
 .blog-container {
