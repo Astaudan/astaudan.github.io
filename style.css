@@ -35,18 +35,6 @@ h1 {
   margin-bottom: 2rem;
   color: white;
   word-break: break-word;
-  animation: pulse 3s ease-in-out infinite;
-}
-
-@keyframes pulse {
-  0%, 100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.93;
-    transform: scale(1.0125);
-  }
 }
 
 .glow {
@@ -84,6 +72,18 @@ h1 {
   left: 50%;
   transform: translateX(-50%);
   z-index: 2;
+  animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    opacity: 0.95;
+    transform: translateX(-50%) scale(1.03);
+  }
 }
 
 .explore-wrapper:hover .explore-button {
@@ -130,6 +130,7 @@ h1 {
   box-shadow: 0 0 8px #1A3B2A;
 }
 
+/* Mobile layout fix */
 @media (max-width: 600px) {
   h1 {
     font-size: 3rem;
@@ -149,6 +150,6 @@ h1 {
 
   .nav-buttons {
     flex-direction: column;
-    top: 70px;
+    top: 0;
   }
 }
