@@ -17,21 +17,36 @@
   <main>
     <section class="timeline">
       <div class="road-container">
-        <!-- Visual road line -->
         <div class="road-line"></div>
-        <!-- Headshot Character -->
+        <div class="dash-line"></div>
         <div class="avatar" id="avatar"></div>
 
-        <!-- Timeline markers -->
-        <div class="marker top" style="left: 5%;" data-date="Aug 2018" data-label="Bachelor of Laws - KU Leuven"></div>
-        <div class="marker bottom" style="left: 15%;" data-date="Aug 2021" data-label="DLPA Advocaten Internship"></div>
-        <div class="marker top" style="left: 25%;" data-date="Sep 2021" data-label="Master KU Leuven"></div>
-        <div class="marker bottom" style="left: 35%;" data-date="Aug 2022" data-label="ClauseBase Start"></div>
-        <div class="marker top" style="left: 45%;" data-date="Aug 2023" data-label="Master Tilburg"></div>
-        <div class="marker bottom" style="left: 55%;" data-date="Nov 2023" data-label="ehvLINC Traineeship"></div>
-        <div class="marker top" style="left: 65%;" data-date="Apr 2023" data-label="Legal Lead @ Ghent Slush'D"></div>
-        <div class="marker bottom" style="left: 75%;" data-date="Aug 2024" data-label="NEXT Leuven Supervisory Board"></div>
-        <div class="marker top" style="left: 90%;" data-date="Sep 2024" data-label="Cresco Associate"></div>
+        <!-- Education -->
+        <div class="marker top education" style="left: 5%;" data-date="Aug 2018" data-label="Bachelor - KU Leuven"></div>
+        <div class="marker bottom education" style="left: 12%;" data-date="Sep 2021" data-label="Master - KU Leuven"></div>
+        <div class="marker top education" style="left: 20%;" data-date="Aug 2023" data-label="LLM - Tilburg University"></div>
+
+        <!-- Internships / Jobs -->
+        <div class="marker bottom job" style="left: 28%;" data-date="Aug 2021" data-label="DLPA Advocaten"></div>
+        <div class="marker top job" style="left: 34%;" data-date="Aug 2022" data-label="Gevers IP Law"></div>
+        <div class="marker bottom job" style="left: 39%;" data-date="Aug 2023" data-label="KBC Internship"></div>
+        <div class="marker top job" style="left: 44%;" data-date="Jan 2024" data-label="Eubelius"></div>
+        <div class="marker bottom job" style="left: 49%;" data-date="Nov 2023" data-label="ehvLINC"></div>
+        <div class="marker top job" style="left: 54%;" data-date="Oct 2022" data-label="ClauseBase"></div>
+        <div class="marker bottom job" style="left: 59%;" data-date="Sep 2024" data-label="Associate @ Cresco"></div>
+
+        <!-- Extracurricular -->
+        <div class="marker top extra" style="left: 66%;" data-date="Apr 2023" data-label="Ghent Slush'D"></div>
+        <div class="marker bottom extra" style="left: 72%;" data-date="Aug 2024" data-label="NEXT Leuven Board"></div>
+        <div class="marker top extra" style="left: 78%;" data-date="Mar 2024" data-label="Holy Hack Winner"></div>
+        <div class="marker bottom extra" style="left: 84%;" data-date="Feb 2024" data-label="ELSA Prague AI"></div>
+        <div class="marker top extra" style="left: 90%;" data-date="May 2022" data-label="Mediation Track"></div>
+      </div>
+
+      <div class="legend">
+        <div><span style="background:#4E9CAF; border:2px solid #CDEDF6;"></span> Education</div>
+        <div><span style="background:#F4A261; border:2px solid #FFE8D6;"></span> Job / Internship</div>
+        <div><span style="background:#90BE6D; border:2px solid #E6F4D7;"></span> Extracurricular</div>
       </div>
 
       <div id="details-popup" class="hidden">
@@ -47,15 +62,21 @@
     const content = document.getElementById('details-content');
 
     const data = {
-      "Aug 2018": "Started Bachelor of Laws at KU Leuven. Involved with Wetswinkel and tutoring economic law.",
-      "Aug 2021": "Internship at DLPA Advocaten. First hands-on legal experience.",
-      "Sep 2021": "Started Master's in Private & Economic Law at KU Leuven.",
-      "Aug 2022": "Joined ClauseBase as Client Engagement Associate.",
-      "Aug 2023": "LLM in Law & Technology at Tilburg University.",
-      "Nov 2023": "Traineeship at ehvLINC. Legal research and collaboration.",
-      "Apr 2023": "Became Legal Lead at Ghent Slush'D.",
-      "Aug 2024": "Joined Supervisory Board of NEXT Leuven.",
-      "Sep 2024": "Started Associate role at Cresco."
+      "Aug 2018": "Started Bachelor of Laws at KU Leuven. Legal Advisor at Wetswinkel, Economic Law tutor.",
+      "Sep 2021": "Master of Laws in Private & Economic Law at KU Leuven.",
+      "Aug 2023": "LLM in Law & Technology at Tilburg University. Alumni Team @NEXT, IT @LCM.",
+      "Aug 2021": "Internship at DLPA Advocaten. First legal experience.",
+      "Aug 2022": "Internship at Gevers IP Law. IP Law focus.",
+      "Aug 2023": "Internship at KBC. Financial & data compliance.",
+      "Jan 2024": "Internship at Eubelius. Large-scale litigation support.",
+      "Nov 2023": "Internship at ehvLINC. Legal research & tech policy.",
+      "Oct 2022": "ClauseBase - Client Engagement. Legal tech consulting.",
+      "Sep 2024": "Associate @ Cresco. Focus on tech, IP & commercial matters.",
+      "Apr 2023": "Legal Lead @ Ghent Slush'D. Structuring legal ops for tech startup community.",
+      "Aug 2024": "Supervisory Board Member @ NEXT Leuven.",
+      "Mar 2024": "Winner of Holy Hack Hackathon with NEXT.",
+      "Feb 2024": "Participated in ELSA Prague cybersecurity & AI program.",
+      "May 2022": "Completed Mediation & Negotiation Track @ LCM."
     };
 
     markers.forEach(marker => {
@@ -70,7 +91,6 @@
       popup.classList.add('hidden');
     }
 
-    // Avatar follows mouse
     const avatar = document.getElementById('avatar');
     document.querySelector('.road-container').addEventListener('mousemove', e => {
       const bounds = e.currentTarget.getBoundingClientRect();
