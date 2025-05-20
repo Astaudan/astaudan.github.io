@@ -1,155 +1,33 @@
-body {
-  margin: 0;
-  padding: 0;
-  background: linear-gradient(160deg, #0d1724 0%, #171f27 100%);
-  font-family: 'Roboto', sans-serif;
-  color: #fff;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  animation: fadeIn 1s ease-in forwards;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="theme-color" content="#0d1724" />
+  <title>Astaudan // home</title>
 
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-}
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="shortcut icon" href="favicon.png" type="image/png" />
 
-.centered {
-  text-align: center;
-  width: 90%;
-  max-width: 800px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 1;
-}
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:wght@700&family=Roboto&display=swap" rel="stylesheet" />
 
-h1 {
-  font-family: 'Playfair Display', serif;
-  font-weight: 700;
-  font-size: 5rem;
-  letter-spacing: 0.3rem;
-  margin-bottom: 2rem;
-  color: #DADADA;
-  word-break: break-word;
-}
-
-.explore-wrapper {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 60px;
-  width: auto;
-}
-
-.explore-button {
-  background-color: #1A3B2A;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 600;
-  padding: 0.8rem 2rem;
-  font-size: 1rem;
-  border-radius: 25px;
-  border: none;
-  color: #F2F2F2;
-  letter-spacing: 0.05rem;
-  cursor: pointer;
-  animation: pulse 3s ease-in-out infinite;
-  box-shadow: 0 0 0px #1A3B2A;
-  transition: opacity 0.2s ease-out;
-  z-index: 2;
-}
-
-@keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-    box-shadow: 0 0 0px #1A3B2A;
-  }
-  50% {
-    transform: scale(1.03);
-    box-shadow: 0 0 15px #1A3B2A;
-  }
-}
-
-/* Only disappear explore + show nav on actual hover of explore button */
-.explore-button:hover {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-}
-
-.explore-button:hover + .nav-buttons {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.explore-button:hover + .nav-buttons a {
-  opacity: 1;
-  transform: scale(1);
-}
-
-/* Nav container */
-.nav-buttons {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.3rem;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-  z-index: 1;
-}
-
-/* Individual nav buttons */
-.nav-buttons a {
-  background-color: #1A3B2A;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 500;
-  padding: 0.6rem 1.2rem;
-  border-radius: 25px;
-  color: #F2F2F2;
-  text-decoration: none;
-  font-size: 0.9rem;
-  letter-spacing: 0.05rem;
-  transition: all 0.3s ease;
-  min-width: 100px;
-  text-align: center;
-  opacity: 0;
-  transform: scale(0.95);
-}
-
-/* Hover styling */
-.nav-buttons a:hover {
-  background-color: #fff;
-  color: #1A3B2A;
-  box-shadow: 0 0 8px #1A3B2A;
-}
-
-/* Mobile layout */
-@media (max-width: 600px) {
-  h1 {
-    font-size: 3rem;
-    letter-spacing: 0.2rem;
-  }
-
-  .explore-button,
-  .nav-buttons a {
-    font-size: 0.85rem;
-    padding: 0.6rem 1rem;
-  }
-
-  .nav-buttons {
-    flex-direction: column;
-    top: 0;
-    gap: 0.6rem;
-  }
-
-  .explore-button:hover + .nav-buttons a {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="centered">
+    <h1>ASTAUDAN</h1>
+    <div class="explore-wrapper">
+      <button class="explore-button">Explore</button>
+      <div class="nav-buttons">
+        <a href="about.html">About</a>
+        <a href="blog.html">Blog</a>
+        <a href="apps.html">Applications</a>
+        <a href="mailto:axel@astaudan.com">Contact</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
