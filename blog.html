@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Astaudan // Blog</title>
+  <title>Astaudan // blog</title>
   <link rel="stylesheet" href="blog.css" />
   <link rel="icon" type="image/png" href="favicon.png" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet" />
@@ -12,7 +12,7 @@
   <nav class="top-nav">
     <a href="index.html" class="nav-logo">
       <img src="favicon.png" alt="Astaudan Logo" class="nav-icon" />
-      <span class="nav-title">ASTAUDAN</span>
+      <span class="nav-title">Astaudan</span>
     </a>
   </nav>
 
@@ -20,46 +20,22 @@
     <h1>Blog & Mentions</h1>
     <p>Snippets, reflections, and appearances elsewhere. Curated and embedded for your scrollable pleasure.</p>
 
-    <div class="embed-slider">
-      <div class="slider-fade left"></div>
-      <div class="slider-track" id="sliderTrack">
-      
-      </div>
-      <div class="slider-fade right"></div>
-      <div class="slider-controls">
-        <button onclick="slidePosts(-1)">&larr;</button>
-        <button onclick="slidePosts(1)">&rarr;</button>
-      </div>
-    </div>
-
-    <div class="non-embed-links">
-      <h2>Additional Mentions</h2>
-      <ul>
-        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7330599979524263936" height="868" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7323662875338711040" height="830" frameborder="0" allowfullscreen title="Post 2"></iframe>
-        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7320364948428120064" height="925" frameborder="0" allowfullscreen title="Post 3"></iframe>
-        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7313578083763060737" height="946" frameborder="0" allowfullscreen title="Post 4"></iframe>
-        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7313459254114287616" height="1093" frameborder="0" allowfullscreen title="Post 5"></iframe>
-        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7307325122539847682" height="715" frameborder="0" allowfullscreen title="Post 6"></iframe>
-        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7297149421610250240" height="902" frameborder="0" allowfullscreen title="Post 7"></iframe>
-        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7285618010889846784" height="902" frameborder="0" allowfullscreen title="Post 8"></iframe>
-        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7283052796642263041" height="883" frameborder="0" allowfullscreen title="Post 9"></iframe>
-        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7274372049664368641" height="593" frameborder="0" allowfullscreen title="Post 10"></iframe>
-        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7270414205449605120" height="757" frameborder="0" allowfullscreen title="Post 11"></iframe>
-        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7239980966943887361" height="919" frameborder="0" allowfullscreen title="Post 12"></iframe>
-      </ul>
+    <div class="embed-grid">
+        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7330599979524263936" height="868" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7323662875338711040" height="830" frameborder="0" allowfullscreen title="Embedded post"></iframe>
+        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7320364948428120064" height="925" frameborder="0" allowfullscreen title="Embedded post"></iframe>
+        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7313578083763060737" height="946" frameborder="0" allowfullscreen title="Embedded post"></iframe>
+        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7313459254114287616" height="1093" frameborder="0" allowfullscreen title="Embedded post"></iframe>
+        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7307325122539847682" height="715" frameborder="0" allowfullscreen title="Embedded post"></iframe>
+        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7297149421610250240" height="902" frameborder="0" allowfullscreen title="Embedded post"></iframe>
+        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7285618010889846784" height="902" frameborder="0" allowfullscreen title="Embedded post"></iframe>
+        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7283052796642263041" height="883" frameborder="0" allowfullscreen title="Embedded post"></iframe>
+        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7274372049664368641" height="593" frameborder="0" allowfullscreen title="Embedded post"></iframe>
+        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7270414205449605120" height="757" frameborder="0" allowfullscreen title="Embedded post"></iframe>
+        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7239980966943887361" height="919" frameborder="0" allowfullscreen title="Embedded post"></iframe>
     </div>
   </div>
-
-  <script>
-    const slider = document.getElementById('sliderTrack');
-    let scrollPosition = 0;
-
-    function slidePosts(direction) {
-      const cardWidth = 504 + 32; // iframe width + estimated margin
-      scrollPosition += direction * cardWidth;
-      slider.scrollTo({ left: scrollPosition, behavior: 'smooth' });
-    }
-  </script>
 </body>
 </html>
+
 
