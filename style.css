@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  background: linear-gradient(160deg, #0A0F0C 0%, #111 100%);
+  background: linear-gradient(160deg, #101826 0%, #1a232c 100%);
   font-family: 'Roboto', sans-serif;
   color: #fff;
   height: 100vh;
@@ -30,7 +30,7 @@ body {
 h1 {
   font-family: 'Playfair Display', serif;
   font-weight: 700;
-  font-size: 4rem;
+  font-size: 5rem; /* increased */
   letter-spacing: 0.3rem;
   margin-bottom: 2rem;
   color: white;
@@ -44,12 +44,12 @@ h1 {
   width: 400px;
   height: 400px;
   transform: translate(-50%, -50%);
-  background: radial-gradient(circle, rgba(26,59,42,0.35) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(26,59,42,0.3) 0%, transparent 70%);
   filter: blur(60px);
   z-index: 0;
 }
 
-/* Wrapper holds fixed height to prevent layout shift */
+/* Explore wrapper keeps height steady */
 .explore-wrapper {
   position: relative;
   height: 60px;
@@ -62,12 +62,11 @@ h1 {
   font-family: 'Roboto', sans-serif;
   font-weight: 600;
   padding: 0.8rem 2rem;
-  font-size: 0.95rem;
+  font-size: 1rem;
   border-radius: 25px;
   border: none;
   color: white;
-  text-transform: uppercase;
-  letter-spacing: 0.08rem;
+  letter-spacing: 0.05rem;
   cursor: pointer;
   transition: all 0.3s ease;
   position: absolute;
@@ -82,7 +81,7 @@ h1 {
   pointer-events: none;
 }
 
-/* Nav buttons appear in place */
+/* Nav appears in place of explore */
 .nav-buttons {
   position: absolute;
   top: 0;
@@ -101,7 +100,6 @@ h1 {
   pointer-events: auto;
 }
 
-/* Nav button styling */
 .nav-buttons a {
   background-color: #1A3B2A;
   font-family: 'Roboto', sans-serif;
@@ -113,6 +111,7 @@ h1 {
   font-size: 0.9rem;
   letter-spacing: 0.05rem;
   transition: all 0.3s ease;
+  min-width: 100px;
   text-align: center;
 }
 
@@ -122,10 +121,10 @@ h1 {
   box-shadow: 0 0 8px #1A3B2A;
 }
 
-/* Responsive */
+/* Mobile tweaks */
 @media (max-width: 600px) {
   h1 {
-    font-size: 2.8rem;
+    font-size: 3rem;
     letter-spacing: 0.2rem;
   }
 
