@@ -18,8 +18,8 @@ body {
 
 h1 {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 7rem; /* bigger font */
-  letter-spacing: 0.3rem;
+  font-size: 8rem; /* bumped up */
+  letter-spacing: 0.4rem; /* wider to match button width */
   margin-bottom: 3rem;
   color: white;
 }
@@ -37,7 +37,7 @@ h1 {
   margin: 0 0.5rem;
   padding: 1rem 0;
   text-align: center;
-  background-color: #6C4DFF;
+  background-color: #5A189A; /* deep plum */
   border: none;
   border-radius: 25px;
   color: white;
@@ -50,7 +50,7 @@ h1 {
 
 .nav-buttons a:hover {
   background-color: #fff;
-  color: #6C4DFF;
+  color: #5A189A;
   cursor: pointer;
-  box-shadow: 0 0 10px #6C4DFF;
+  box-shadow: 0 0 10px #5A189A;
 }
