@@ -4,6 +4,7 @@ body {
   background: linear-gradient(160deg, #0d1724, #171f27);
   font-family: 'Roboto', sans-serif;
   color: #F2F2F2;
+  overflow-x: hidden;
 }
 
 .intro-section {
@@ -36,10 +37,8 @@ body {
 
 .road-container {
   position: relative;
-  width: 100%;
-  max-width: 1100px;
-  height: 220px;
-  background: none;
+  width: 100vw;
+  height: 250px;
   margin-top: 2rem;
   overflow: visible;
 }
@@ -48,29 +47,48 @@ body {
   position: absolute;
   top: 50%;
   left: 0;
-  height: 4px;
   width: 100%;
-  background-color: #DADADA;
+  height: 70px;
   transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.road-line::before,
+.road-line::after {
+  content: "";
+  display: block;
+  height: 2px;
+  background-color: #DADADA;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: 20px;
+}
+
+.road-line::after {
+  top: 48px;
+}
+
+.dash-line {
+  position: absolute;
+  top: 34px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-image: repeating-linear-gradient(to right, #DADADA, #DADADA 10px, transparent 10px, transparent 20px);
+  z-index: 2;
 }
 
 .marker {
   position: absolute;
   width: 18px;
   height: 18px;
-  background: #DADADA;
-  border: 2px solid #F2F2F2;
   border-radius: 50%;
   cursor: pointer;
-  z-index: 2;
-}
-
-.marker.top {
-  top: 20px;
-}
-
-.marker.bottom {
-  bottom: 20px;
+  z-index: 3;
 }
 
 .marker::after {
@@ -86,12 +104,40 @@ body {
   white-space: nowrap;
   opacity: 0.9;
   pointer-events: none;
+}
+
+.marker.top {
   top: -30px;
 }
 
-.marker.bottom::after {
-  top: auto;
+.marker.top::after {
+  bottom: 100%;
+  margin-bottom: 8px;
+}
+
+.marker.bottom {
   bottom: -30px;
+}
+
+.marker.bottom::after {
+  top: 100%;
+  margin-top: 8px;
+}
+
+/* Category colors */
+.marker.education {
+  background-color: #4E9CAF;
+  border: 2px solid #CDEDF6;
+}
+
+.marker.job {
+  background-color: #F4A261;
+  border: 2px solid #FFE8D6;
+}
+
+.marker.extra {
+  background-color: #90BE6D;
+  border: 2px solid #E6F4D7;
 }
 
 #details-popup {
@@ -136,11 +182,32 @@ body {
   bottom: 40px;
   width: 40px;
   height: 40px;
-  background-image: url('avatar.png'); /* Replace with actual avatar path */
+  background-image: url('avatar.png');
   background-size: cover;
   background-position: center;
   border-radius: 50%;
   pointer-events: none;
   transition: left 0.05s ease-out;
-  z-index: 3;
+  z-index: 4;
+}
+
+/* Legend */
+.legend {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 3rem;
+  font-size: 0.9rem;
+  color: #CCCCCC;
+}
+.legend div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.legend span {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
 }
