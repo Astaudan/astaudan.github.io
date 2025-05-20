@@ -1,23 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Astaudan // about</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Astaudan // About</title>
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="shortcut icon" href="favicon.png" type="image/png" />
   
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="about.css">
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="centered">
-    <h1>ABOUT</h1>
-    <p style="max-width: 600px; margin: auto; font-size: 1.2rem; line-height: 1.6;">
-      Axel Desmet. Lawyer. Legal engineer. Quietly building digital weapons for a better legal future.<br><br>
-      This site is a reflection of sharp minds, sharp code, and sharper ethics. Welcome to Astaudan.
-    </p>
-  </div>
+  <header class="intro-section">
+    <h1>Astaudan</h1>
+    <p>A long-term project with the ambition to improve access to legal aid, legal workflows, and knowledge sharing. This is the story behind the one building it.</p>
+  </header>
+
+  <main>
+    <section class="timeline">
+      <div class="road-container">
+        <!-- Headshot Character -->
+        <div class="avatar" id="avatar"></div>
+        <!-- Timeline markers -->
+        <div class="marker" data-date="Aug 2018" data-label="Bachelor of Laws - KU Leuven"></div>
+        <div class="marker" data-date="Sep 2021" data-label="Master of Laws - KU Leuven"></div>
+        <div class="marker" data-date="Aug 2023" data-label="Master of Laws, Law & Tech - Tilburg"></div>
+        <div class="marker" data-date="Oct 2022" data-label="ClauseBase Client Engagement"></div>
+        <div class="marker" data-date="Apr 2023" data-label="Legal Lead @ Ghent Slush'D"></div>
+        <div class="marker" data-date="Sep 2024" data-label="Associate @ Cresco"></div>
+      </div>
+
+      <div id="details-popup" class="hidden">
+        <div id="details-content"></div>
+        <button onclick="closePopup()">Close</button>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const markers = document.querySelectorAll('.marker');
+    const popup = document.getElementById('details-popup');
+    const content = document.getElementById('details-content');
+
+    const data = {
+      "Aug 2018": "Started Bachelor of Laws at KU Leuven. Involved with Wetswinkel and tutoring economic law.",
+      "Sep 2021": "Master of Laws in Private & Economic Law at KU Leuven. Legal roles at NEXT and LCM.",
+      "Aug 2023": "LLM in Law & Technology at Tilburg University. Alumni Team @NEXT, IT Manager @LCM.",
+      "Oct 2022": "ClauseBase – Client Engagement Associate. Led client-focused tech adoption.",
+      "Apr 2023": "Joined Ghent Slush'D as Legal Lead. Focus on legal structure and startup support.",
+      "Sep 2024": "Began role as Associate @ Cresco. Advising on tech, IP and commercial matters."
+    };
+
+    markers.forEach(marker => {
+      marker.addEventListener('click', () => {
+        const date = marker.getAttribute('data-date');
+        content.innerHTML = `<strong>${date}</strong><p>${data[date]}</p>`;
+        popup.classList.remove('hidden');
+      });
+    });
+
+    function closePopup() {
+      popup.classList.add('hidden');
+    }
+
+    // Avatar follows mouse on road
+    const avatar = document.getElementById('avatar');
+    document.querySelector('.road-container').addEventListener('mousemove', e => {
+      const bounds = e.currentTarget.getBoundingClientRect();
+      const x = e.clientX - bounds.left;
+      avatar.style.left = `${x}px`;
+    });
+  </script>
 </body>
 </html>
+
