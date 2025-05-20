@@ -9,14 +9,14 @@ body {
 
 .top-nav {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  background-color: #0d1724;
+  background-color: rgba(13, 23, 36, 0.95);
   padding: 0.75rem 1.5rem;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.5);
   position: sticky;
   top: 0;
   z-index: 10;
+  backdrop-filter: blur(8px);
 }
 
 .nav-logo {
@@ -37,18 +37,6 @@ body {
   color: #DADADA;
   font-weight: 700;
   letter-spacing: 0.05rem;
-}
-
-.nav-link {
-  color: #90BE6D;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 1rem;
-}
-
-.nav-link:hover {
-  text-decoration: underline;
-  color: #A5DB84;
 }
 
 .blog-container {
@@ -74,20 +62,64 @@ body {
   margin-bottom: 2rem;
 }
 
-.embed-grid {
-  column-count: 2;
-  column-gap: 2rem;
-  margin-bottom: 3rem;
+.embed-slider {
+  position: relative;
+  overflow: hidden;
+  margin: 2rem 0;
 }
 
-.embed-grid iframe {
-  width: 100%;
-  max-width: 504px;
-  margin-bottom: 2rem;
+.slider-track {
+  display: flex;
+  transition: transform 0.4s ease-in-out;
+  gap: 2rem;
+  padding: 1rem 0;
+}
+
+.slider-track iframe {
+  width: 504px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  display: block;
-  break-inside: avoid;
+  flex-shrink: 0;
+}
+
+.slider-fade {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.slider-fade.left {
+  left: 0;
+  background: linear-gradient(to right, #0d1724 0%, transparent 100%);
+}
+
+.slider-fade.right {
+  right: 0;
+  background: linear-gradient(to left, #0d1724 0%, transparent 100%);
+}
+
+.slider-controls {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.slider-controls button {
+  background: #1A3B2A;
+  color: #F2F2F2;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  margin: 0 0.5rem;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.slider-controls button:hover {
+  background: #90BE6D;
+  color: #0d1724;
 }
 
 .non-embed-links {
@@ -126,8 +158,8 @@ body {
 }
 
 @media (max-width: 800px) {
-  .embed-grid {
-    column-count: 1;
+  .slider-track iframe {
+    width: 90vw;
   }
 }
 
