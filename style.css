@@ -1,4 +1,3 @@
-/* Base layout */
 body {
   margin: 0;
   padding: 0;
@@ -10,10 +9,9 @@ body {
   justify-content: center;
   align-items: center;
   opacity: 0;
-  animation: fadeIn 1.2s ease-in forwards;
+  animation: fadeIn 1s ease-in forwards;
 }
 
-/* Fade in on load */
 @keyframes fadeIn {
   to {
     opacity: 1;
@@ -22,6 +20,7 @@ body {
 
 .centered {
   text-align: center;
+  width: 90%;
   max-width: 800px;
   margin: 0 auto;
   position: relative;
@@ -29,16 +28,15 @@ body {
 }
 
 h1 {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 8rem;
-  letter-spacing: 0.4rem;
-  margin-bottom: 3rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 4rem;
+  letter-spacing: 0.3rem;
+  margin-bottom: 2rem;
   color: white;
-  z-index: 2;
-  position: relative;
+  word-break: break-word;
 }
 
-/* Glow effect */
 .glow {
   position: absolute;
   top: 40%;
@@ -51,18 +49,20 @@ h1 {
   z-index: 0;
 }
 
-/* Explore button */
+/* EXPLORE button */
 .explore-button {
   background-color: #1A3B2A;
-  font-family: 'Playfair Display', serif;
-  padding: 1rem 2.5rem;
-  font-size: 1.3rem;
-  border-radius: 30px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  display: inline-block;
+  font-family: 'Roboto', sans-serif;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 25px;
+  border: none;
+  color: white;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 2;
 }
 
 .explore-button:hover {
@@ -71,42 +71,55 @@ h1 {
   box-shadow: 0 0 10px #1A3B2A;
 }
 
-/* Hidden nav by default */
+/* NAV BUTTONS */
 .nav-buttons {
+  display: none;
   margin-top: 1.5rem;
-  display: flex;
-  justify-content: center;
+  flex-direction: column;
   gap: 1rem;
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(10px);
-  transition: all 0.5s ease;
+  align-items: center;
 }
 
 .explore-wrapper:hover .nav-buttons {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateY(0);
+  display: flex;
 }
 
-/* Button links */
 .nav-buttons a {
   background-color: #1A3B2A;
-  font-family: 'Playfair Display', serif;
-  padding: 0.7rem 1.2rem;
-  border-radius: 20px;
+  font-family: 'Roboto', sans-serif;
+  padding: 0.8rem 2.5rem;
+  border-radius: 25px;
   color: white;
   text-decoration: none;
   font-size: 1rem;
-  transition: all 0.3s ease;
-  min-width: 120px;
-  text-align: center;
-  text-transform: uppercase;
   letter-spacing: 0.05rem;
+  transition: all 0.3s ease;
+  min-width: 200px;
+  text-align: center;
 }
 
 .nav-buttons a:hover {
   background-color: #fff;
   color: #1A3B2A;
   box-shadow: 0 0 10px #1A3B2A;
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2.7rem;
+    letter-spacing: 0.2rem;
+  }
+
+  .explore-button,
+  .nav-buttons a {
+    font-size: 0.9rem;
+    padding: 0.7rem 1.8rem;
+    min-width: 160px;
+  }
+
+  .glow {
+    width: 300px;
+    height: 300px;
+  }
 }
