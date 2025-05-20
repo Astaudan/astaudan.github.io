@@ -46,7 +46,6 @@ h1 {
   width: auto;
 }
 
-/* Explore button */
 .explore-button {
   background-color: #1A3B2A;
   font-family: 'Roboto', sans-serif;
@@ -64,7 +63,6 @@ h1 {
   z-index: 2;
 }
 
-/* Pulse animation */
 @keyframes pulse {
   0%, 100% {
     transform: scale(1);
@@ -76,13 +74,30 @@ h1 {
   }
 }
 
-/* Container for nav buttons */
+/* Only disappear explore + show nav on actual hover of explore button */
+.explore-button:hover {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.explore-button:hover + .nav-buttons {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.explore-button:hover + .nav-buttons a {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Nav container */
 .nav-buttons {
   position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0.4rem; /* tighter spacing */
+  gap: 0.3rem;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
@@ -107,31 +122,14 @@ h1 {
   transform: scale(0.95);
 }
 
-/* When hovering on wrapper, hide Explore + show navs */
-.explore-wrapper:hover .explore-button {
-  opacity: 0;
-  pointer-events: none;
-  visibility: hidden;
-}
-
-.explore-wrapper:hover .nav-buttons {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.explore-wrapper:hover .nav-buttons a {
-  opacity: 1;
-  transform: scale(1);
-}
-
-/* Hover styles */
+/* Hover styling */
 .nav-buttons a:hover {
   background-color: #fff;
   color: #1A3B2A;
   box-shadow: 0 0 8px #1A3B2A;
 }
 
-/* Mobile styles */
+/* Mobile layout */
 @media (max-width: 600px) {
   h1 {
     font-size: 3rem;
@@ -150,7 +148,7 @@ h1 {
     gap: 0.6rem;
   }
 
-  .explore-wrapper:hover .nav-buttons a {
+  .explore-button:hover + .nav-buttons a {
     transform: scale(1);
     opacity: 1;
   }
