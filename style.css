@@ -45,7 +45,6 @@ h1 {
   align-items: center;
 }
 
-/* WRAPS BOTH BUTTON + NAV */
 .hover-trigger {
   position: relative;
   display: flex;
@@ -53,7 +52,6 @@ h1 {
   justify-content: center;
 }
 
-/* EXPLORE BUTTON */
 .explore-button {
   background-color: #1A3B2A;
   font-family: 'Roboto', sans-serif;
@@ -83,7 +81,6 @@ h1 {
   }
 }
 
-/* ON HOVER OF SHARED CONTAINER */
 .hover-trigger:hover .explore-button {
   opacity: 0;
   visibility: hidden;
@@ -97,7 +94,7 @@ h1 {
 
 .hover-trigger:hover .nav-buttons a {
   opacity: 1;
-  transform: scale(1);
+  transform: scale(1) translateX(var(--offset, 0px));
 }
 
 /* NAV BUTTONS */
@@ -113,7 +110,9 @@ h1 {
   z-index: 1;
 }
 
+/* INDIVIDUAL BUTTONS */
 .nav-buttons a {
+  --offset: 0px;
   background-color: #1A3B2A;
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
@@ -123,20 +122,31 @@ h1 {
   text-decoration: none;
   font-size: 0.9rem;
   letter-spacing: 0.05rem;
-  transition: all 0.3s ease;
+  transition:
+    opacity 0.4s ease-in-out,
+    transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 0.3s ease,
+    color 0.3s ease;
   min-width: 100px;
   text-align: center;
   opacity: 0;
-  transform: scale(0.95);
+  transform: scale(0.95) translateX(0px); /* smoothly animates back */
 }
 
-.nav-buttons a:hover {
-  background-color: #fff;
+.nav-buttons a:nth-child(1) { --offset: -90px; }
+.nav-buttons a:nth-child(2) { --offset: -30px; }
+.nav-buttons a:nth-child(3) { --offset: 30px; }
+.nav-buttons a:nth-child(4) { --offset: 90px; }
+
+.nav-buttons a:hover,
+.nav-buttons a:focus,
+.nav-buttons a:active {
+  background-color: #DADADA;
   color: #1A3B2A;
-  box-shadow: 0 0 8px #1A3B2A;
+  box-shadow: 0 0 8px #DADADA;
 }
 
-/* MOBILE */
+/* MOBILE STACK */
 @media (max-width: 600px) {
   h1 {
     font-size: 3rem;
@@ -156,7 +166,7 @@ h1 {
   }
 
   .hover-trigger:hover .nav-buttons a {
-    transform: scale(1);
+    transform: scale(1) translateX(0);
     opacity: 1;
   }
 }
