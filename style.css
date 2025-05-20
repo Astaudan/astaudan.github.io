@@ -45,6 +45,12 @@ h1 {
   align-items: center;
 }
 
+/* Flicker buffer zone */
+.hover-bridge {
+  position: relative;
+  padding: 40px 80px;
+}
+
 .hover-trigger {
   position: relative;
   display: flex;
@@ -81,23 +87,23 @@ h1 {
   }
 }
 
-.hover-trigger:hover .explore-button {
+/* Hover behavior moved to hover-bridge */
+.hover-bridge:hover .explore-button {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
 }
 
-.hover-trigger:hover .nav-buttons {
+.hover-bridge:hover .nav-buttons {
   opacity: 1;
   pointer-events: auto;
 }
 
-.hover-trigger:hover .nav-buttons a {
+.hover-bridge:hover .nav-buttons a {
   opacity: 1;
   transform: scale(1) translateX(var(--offset, 0px));
 }
 
-/* NAV BUTTONS */
 .nav-buttons {
   position: absolute;
   display: flex;
@@ -110,7 +116,6 @@ h1 {
   z-index: 1;
 }
 
-/* INDIVIDUAL BUTTONS */
 .nav-buttons a {
   --offset: 0px;
   background-color: #1A3B2A;
@@ -130,13 +135,14 @@ h1 {
   min-width: 100px;
   text-align: center;
   opacity: 0;
-  transform: scale(0.95) translateX(0px); /* smoothly animates back */
+  transform: scale(0.95) translateX(0px);
 }
 
-.nav-buttons a:nth-child(1) { --offset: -90px; }
-.nav-buttons a:nth-child(2) { --offset: -30px; }
-.nav-buttons a:nth-child(3) { --offset: 30px; }
-.nav-buttons a:nth-child(4) { --offset: 90px; }
+/* Tighter offsets for centered fan-out */
+.nav-buttons a:nth-child(1) { --offset: -50px; }
+.nav-buttons a:nth-child(2) { --offset: -15px; }
+.nav-buttons a:nth-child(3) { --offset: 15px; }
+.nav-buttons a:nth-child(4) { --offset: 50px; }
 
 .nav-buttons a:hover,
 .nav-buttons a:focus,
@@ -146,7 +152,7 @@ h1 {
   box-shadow: 0 0 8px #DADADA;
 }
 
-/* MOBILE STACK */
+/* Mobile layout adjustments */
 @media (max-width: 600px) {
   h1 {
     font-size: 3rem;
@@ -165,8 +171,8 @@ h1 {
     gap: 0.6rem;
   }
 
-  .hover-trigger:hover .nav-buttons a {
-    transform: scale(1) translateX(0);
+  .hover-bridge:hover .nav-buttons a {
+    transform: scale(1);
     opacity: 1;
   }
 }
