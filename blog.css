@@ -10,29 +10,31 @@ body {
 .top-nav {
   display: flex;
   align-items: center;
-  background-color: rgba(13, 23, 36, 0.95);
+  background-color: #131f2a; /* slightly different tone */
   padding: 0.75rem 1.5rem;
   box-shadow: 0 2px 6px rgba(0,0,0,0.5);
   position: sticky;
   top: 0;
   z-index: 10;
-  backdrop-filter: blur(8px);
+  height: 64px;
 }
 
 .nav-logo {
-  display: inline-block;
+  display: flex;
+  align-items: center;
   text-decoration: none;
+  height: 100%;
 }
 
 .nav-icon {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  transition: opacity 0.3s;
+  transition: transform 0.3s ease-in-out;
 }
 
 .nav-icon:hover {
-  opacity: 0.85;
+  transform: scale(1.1);
 }
 
 .blog-container {
