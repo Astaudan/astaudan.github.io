@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Astaudan // NDA Checker</title>
+  <link rel="stylesheet" href="nda-checker.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav class="top-nav">
+    <a href="../index.html" class="nav-logo" title="Home">
+      <img src="favicon.png" alt="Astaudan Logo" class="nav-icon">
+    </a>
+  </nav>
+
+  <div class="nda-container">
+    <div class="upload-panel">
+      <h2>Upload NDA</h2>
+      <div class="upload-box" id="uploadBox">
+        <p>Drag & Drop or Click to Upload</p>
+        <input type="file" id="fileInput" accept=".pdf,.doc,.docx,.txt">
+      </div>
+      <div id="fileDisplay">No file uploaded</div>
+    </div>
+
+    <div class="check-panel">
+      <h2>Customize Check</h2>
+      <textarea id="customInstructions" placeholder="E.g., focus on duration, jurisdiction, and non-solicitation clauses..."></textarea>
+      <button id="checkButton">Check</button>
+      <div id="responseOutput"></div>
+    </div>
+  </div>
+
+  <script>
+    const fileInput = document.getElementById('fileInput');
+    const uploadBox = document.getElementById('uploadBox');
+    const fileDisplay = document.getElementById('fileDisplay');
+    const checkButton = document.getElementById('checkButton');
+
+    uploadBox.addEventListener('click', () => fileInput.click());
+
+    uploadBox.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      uploadBox.classList.add('dragging');
+    });
+
+    uploadBox.addEventListener('dragleave', () => {
+      uploadBox.classList.remove('dragging');
+    });
+
+    uploadBox.addEventListener('drop', (e) => {
+      e.preventDefault();
+      uploadBox.classList.remove('dragging');
+      const file = e.dataTransfer.files[0];
+      handleFile(file);
+    });
+
+    fileInput.addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      handleFile(file);
+    });
+
+    function handleFile(file) {
+      if (!file) return;
+      fileDisplay.textContent = `Uploaded: ${file.name}`;
+      // You could render the file content here (e.g. PDF preview or extract text)
+    }
+
+    checkButton.addEventListener('click', () => {
+      const instructions = document.getElementById('customInstructions').value;
+      const fileName = fileInput.files[0]?.name || "No file";
+      // Call your API here with file and instructions
+      const resultBox = document.getElementById('responseOutput');
+      resultBox.textContent = `API request sent with instructions: "${instructions}" on file: ${fileName}`;
+    });
+  </script>
+</body>
+</html>
