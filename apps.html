@@ -1,20 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Astaudan // apps</title>
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png" />
-  <link rel="shortcut icon" href="favicon.png" type="image/png" />
-  
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="applications.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="centered">
-    <h1>APPLICATIONS</h1>
-    <p>Private tools for exclusive minds. Login coming soon.</p>
+  <nav class="top-nav">
+    <a href="index.html" class="nav-logo" title="Home">
+      <img src="favicon.png" alt="Astaudan Logo" class="nav-icon">
+    </a>
+  </nav>
+
+  <div class="apps-container">
+    <h1>Legaltech Applications</h1>
+    <div class="app-grid">
+      <div class="app-card">
+        <h2>Clause Generator</h2>
+        <p>Create legally sound clauses in seconds.</p>
+        <a href="#">Launch</a>
+      </div>
+      <div class="app-card">
+        <h2>Risk Scanner</h2>
+        <p>Scan contracts for red flags & compliance gaps.</p>
+        <a href="#">Launch</a>
+      </div>
+      <div class="app-card">
+        <h2>Term Sheet Builder</h2>
+        <p>Quickly draft startup term sheets with legal logic.</p>
+        <a href="#">Launch</a>
+      </div>
+      <!-- Add more cards as needed -->
+    </div>
   </div>
 </body>
 </html>
