@@ -1,0 +1,128 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(160deg, #0d1724, #171f27);
+  font-family: 'Roboto', sans-serif;
+  color: #F2F2F2;
+}
+
+.top-nav {
+  display: flex;
+  align-items: center;
+  background-color: #131f2a;
+  padding: 0.75rem 1.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  height: 64px;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  height: 100%;
+}
+
+.nav-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.nav-icon:hover {
+  transform: scale(1.1);
+}
+
+.nda-container {
+  display: flex;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 0 2rem;
+  align-items: flex-start;
+}
+
+.upload-panel, .check-panel {
+  flex: 1;
+  background-color: #1c2b36;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.upload-panel h2, .check-panel h2 {
+  margin-top: 0;
+  font-size: 1.6rem;
+  color: #1A3B2A;
+}
+
+.upload-box {
+  border: 2px dashed #1A3B2A;
+  padding: 2rem;
+  text-align: center;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  background-color: #21313e;
+  transition: border-color 0.3s;
+}
+
+.upload-box.dragging {
+  border-color: #A5DB84;
+}
+
+.upload-box input[type="file"] {
+  display: none;
+}
+
+#fileDisplay {
+  color: #CCCCCC;
+  font-style: italic;
+  margin-top: 0.5rem;
+}
+
+textarea {
+  width: 100%;
+  min-height: 100px;
+  border: none;
+  border-radius: 6px;
+  padding: 1rem;
+  font-family: 'Roboto', sans-serif;
+  resize: vertical;
+  background-color: #21313e;
+  color: #F2F2F2;
+  margin-bottom: 1rem;
+}
+
+#checkButton {
+  background-color: #1A3B2A;
+  color: #F2F2F2;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#checkButton:hover {
+  background-color: #224734;
+}
+
+#responseOutput {
+  margin-top: 1rem;
+  background-color: #21313e;
+  padding: 1rem;
+  border-radius: 6px;
+  color: #BBBBBB;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 900px) {
+  .nda-container {
+    flex-direction: column;
+  }
+}
