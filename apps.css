@@ -73,7 +73,7 @@ body {
 
 .app-card h2 {
   font-size: 1.4rem;
-  color: #A5DB84;
+  color: #1A3B2A;
   margin-bottom: 0.5rem;
 }
 
@@ -86,8 +86,8 @@ body {
 .app-card a {
   display: inline-block;
   padding: 0.5rem 1rem;
-  background-color: #90BE6D;
-  color: #0d1724;
+  background-color: #1A3B2A;
+  color: #F2F2F2;
   text-decoration: none;
   border-radius: 8px;
   font-weight: 500;
@@ -95,5 +95,5 @@ body {
 }
 
 .app-card a:hover {
-  background-color: #A5DB84;
+  background-color: #224734;
 }
